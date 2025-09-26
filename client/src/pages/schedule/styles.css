@@ -2,15 +2,16 @@
 .schedule-form-section {
   background: white;
   border-radius: 24px;
-  padding: 48px;
+  padding: 32px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
   backdrop-filter: blur(20px);
+  margin-bottom: 32px;
 }
 
 .form-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 8px;
@@ -19,13 +20,20 @@
 .form-subtitle {
   font-size: 16px;
   color: #6b7280;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
+}
+
+/* Search Input Field */
+.search-input-field {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
 }
 
 /* Input Field */
@@ -43,7 +51,7 @@
 }
 
 .train-input {
-  width: 100%;
+  flex: 1;
   padding: 16px 20px;
   border: 2px solid #e5e7eb;
   border-radius: 12px;
@@ -68,17 +76,17 @@
   background: #f97316;
   color: white;
   border: none;
-  padding: 18px 32px;
+  padding: 16px 24px;
   border-radius: 12px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 8px;
+  min-width: 140px;
   box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
@@ -97,6 +105,572 @@
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.demo-text {
+  font-size: 12px;
+  color: #f97316;
+  margin-top: 8px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Error Display */
+.error-container {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+
+.error-icon {
+  color: #dc2626;
+  flex-shrink: 0;
+}
+
+.error-content h3 {
+  color: #dc2626;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.error-content p {
+  color: #991b1b;
+  margin: 0;
+}
+
+/* Schedule Container */
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Schedule Header */
+.schedule-header {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(249, 115, 22, 0.3);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.schedule-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.train-number-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  font-family: "Courier New", monospace;
+}
+
+.route-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.route-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.route-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.journey-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Card Styles */
+.filters-card,
+.schedule-list-card,
+.summary-card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+}
+
+.filters-card h3,
+.schedule-list-card h3,
+.summary-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Filters */
+.filters-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-checkbox input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.filter-checkbox input:checked + .checkmark {
+  background: #f97316;
+  border-color: #f97316;
+}
+
+.filter-checkbox input:checked + .checkmark:after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.day-select {
+  padding: 8px 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.day-select:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* Stations List */
+.stations-list {
+  max-height: 500px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 4px;
+}
+
+/* Custom Scrollbar */
+.stations-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.stations-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.stations-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.stations-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.station-item {
+  background: white;
+  border-radius: 8px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.station-item.is-stop {
+  background: #fefce8;
+  border-color: #fbbf24;
+}
+
+.station-item.no-stop {
+  background: white;
+}
+
+.station-item:hover {
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.station-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.station-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.station-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.station-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.station-code {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  font-family: "Courier New", monospace;
+}
+
+.stop-indicator {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.station-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #374151;
+}
+
+.arrival-time {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+}
+
+.day-badge {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.state-name {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.station-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.platform-badge {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+}
+
+.amenities-compact {
+  display: flex;
+  gap: 4px;
+}
+
+.amenity-compact {
+  background: #f0f9ff;
+  color: #0369a1;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #bae6fd;
+}
+
+/* Summary Grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.summary-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f97316;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-form-section {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .form-title {
+    font-size: 24px;
+  }
+
+  .search-input-field {
+    flex-direction: column;
+  }
+
+  .schedule-header {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .schedule-title {
+    font-size: 20px;
+  }
+
+  .route-text {
+    font-size: 16px;
+  }
+
+  .filters-card,
+  .schedule-list-card,
+  .summary-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .stations-list {
+    max-height: 400px;
+  }
+
+  .station-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .station-right {
+    align-self: flex-end;
+  }
+
+  .station-name {
+    max-width: 180px;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .train-input {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .schedule-button {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+  }
+
+  .schedule-title {
+    font-size: 18px;
+  }
+
+  .stations-list {
+    max-height: 350px;
+  }
+
+  .station-item {
+    padding: 10px 12px;
+  }
+
+  .station-name {
+    font-size: 14px;
+    max-width: 150px;
+  }
+
+  .arrival-time {
+    font-size: 12px;
+  }
+
+  .station-meta-row {
+    gap: 8px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .summary-value {
+    font-size: 20px;
+  }
+}
+
+/* Animations */
+.schedule-form-section,
+.error-container,
+.schedule-container > * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.schedule-container > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.schedule-container > *:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.schedule-container > *:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.station-item {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.station-item:nth-child(odd) {
+  animation-delay: 0.05s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
