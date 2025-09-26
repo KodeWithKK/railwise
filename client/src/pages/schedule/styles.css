@@ -1,0 +1,144 @@
+/* Schedule Form Section */
+.schedule-form-section {
+  background: white;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(20px);
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Input Field */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.train-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1f2937;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.train-input:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.train-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Get Schedule Button */
+.schedule-button {
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.schedule-button:hover:not(:disabled) {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+}
+
+.schedule-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.schedule-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .schedule-form-section {
+    padding: 32px 24px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .train-input {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .schedule-button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+  }
+}
+
+.schedule-form-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

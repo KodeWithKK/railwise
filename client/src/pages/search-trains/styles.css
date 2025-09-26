@@ -1,0 +1,214 @@
+/* Search Form Section */
+.search-form-section {
+  background: white;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  backdrop-filter: blur(20px);
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Station Selection Row */
+.station-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  position: relative;
+}
+
+.station-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.station-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.station-select {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1f2937;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 48px;
+}
+
+.station-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.station-select option {
+  padding: 8px;
+}
+
+.swap-button {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.swap-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+  transform: rotate(180deg);
+}
+
+/* Date Selection */
+.date-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.date-row label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.date-input-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.date-input-container:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.date-input-container svg {
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.date-input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #1f2937;
+  background: transparent;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* Search Button */
+.search-button {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.search-button:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+}
+
+.search-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-form-section {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .station-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .swap-button {
+    align-self: center;
+    transform: rotate(90deg);
+  }
+
+  .swap-button:hover {
+    transform: rotate(270deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .station-select,
+  .date-input {
+    font-size: 14px;
+  }
+
+  .search-button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+}
+
+.search-form-section {
+  animation: fadeInUp 0.6s ease-out;
+}

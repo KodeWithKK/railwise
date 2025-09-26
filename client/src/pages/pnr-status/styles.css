@@ -1,0 +1,158 @@
+/* PNR Form Section */
+.pnr-form-section {
+  background: white;
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(20px);
+}
+
+.form-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Input Field */
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.pnr-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #1f2937;
+  background: white;
+  transition: all 0.2s ease;
+  outline: none;
+  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+}
+
+.pnr-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.pnr-input::placeholder {
+  color: #9ca3af;
+  font-family: inherit;
+}
+
+.demo-text {
+  font-size: 12px;
+  color: #8b5cf6;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Check Status Button */
+.check-button {
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  padding: 18px 32px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.check-button:hover:not(:disabled) {
+  background: #7c3aed;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
+}
+
+.check-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.check-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pnr-form-section {
+    padding: 32px 24px;
+    border-radius: 16px;
+    max-width: 100%;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pnr-input {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+
+  .check-button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  .form-subtitle {
+    font-size: 14px;
+  }
+
+  .demo-text {
+    font-size: 11px;
+  }
+}
+
+.pnr-form-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
