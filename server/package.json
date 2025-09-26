@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index",
+    "build": "node esbuild.config.js",
+    "dev": "tsc-watch --onSuccess \"node build/index.js\"",
+    "format": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@clerk/express": "^1.3.54",
+    "@vendia/serverless-express": "^4.12.6",
+    "axios": "^1.12.2",
+    "bcryptjs": "^3.0.0",
+    "chalk": "~4.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.9",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^24.1.0",
+    "drizzle-kit": "^0.28.1",
+    "esbuild": "^0.25.8",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.1",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.3"
+  }
+}

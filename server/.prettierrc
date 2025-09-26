@@ -1,0 +1,12 @@
+{
+  "tabWidth": 2,
+  "semi": true,
+  "printWidth": 80,
+  "singleQuote": false,
+  "arrowParens": "always",
+  "useTabs": false,
+  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.0.0",
+  "importOrder": ["<THIRD_PARTY_MODULES>", "", "^[./]"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"]
+}
