@@ -13,7 +13,7 @@ import {
   AlertCircle,
   Info,
 } from "lucide-react";
-import FeaturePageLayout from "@/layouts/feature-page";
+import FeaturePageLayout from "@/components/layouts/feature-page";
 import "./styles.css";
 
 interface StationScheduleItem {

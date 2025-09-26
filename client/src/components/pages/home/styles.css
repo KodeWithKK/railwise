@@ -65,7 +65,7 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .hero-description {
@@ -87,7 +87,7 @@
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .hero-badge {
@@ -422,9 +422,27 @@
 
 /* Additional responsive styles for new sections */
 @media (max-width: 768px) {
+  #stats-section {
+    padding: 40px 16px;
+  }
+
   .stats-container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+  }
+
+  .stat-card {
+    padding: 24px 16px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
   }
 
   .features-container {
@@ -442,10 +460,6 @@
 
   #final-cta-section {
     padding: 60px 16px;
-  }
-
-  .stat-number {
-    font-size: 2.5rem;
   }
 
   .feature-card {

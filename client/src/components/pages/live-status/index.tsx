@@ -9,7 +9,7 @@ import {
   Train,
   AlertCircle,
 } from "lucide-react";
-import FeaturePageLayout from "@/layouts/feature-page";
+import FeaturePageLayout from "@/components/layouts/feature-page";
 import "./styles.css";
 
 interface ApiResponse<T> {

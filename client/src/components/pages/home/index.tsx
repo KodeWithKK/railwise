@@ -29,7 +29,9 @@ function HomePage() {
             <a href="#smart-travel-section" className="btn-primary">
               Get Started →
             </a>
-            <button className="btn-secondary">Track Train</button>
+            <Link to="/live-status" className="btn-secondary">
+              Track Train
+            </Link>
           </div>
         </div>
       </main>

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
+import "./styles.css";
 
 type Station = {
   stnCode: string;

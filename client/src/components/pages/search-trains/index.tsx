@@ -9,8 +9,8 @@ import {
   ChevronRight,
   Zap,
 } from "lucide-react";
-import SearchableDropdown from "@/components/searchable-dropdown";
-import FeaturePageLayout from "@/layouts/feature-page";
+import SearchableDropdown from "@/components/features/searchable-dropdown";
+import FeaturePageLayout from "@/components/layouts/feature-page";
 import { stations } from "@/data/railway-stations-list";
 import "./styles.css";
 
