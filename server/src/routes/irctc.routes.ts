@@ -5,7 +5,7 @@ import {
   getPNRStatus,
   getTrainSchedule,
   searchTrains,
-} from "../controller/pdf-gen.controller";
+} from "../controller/irctc.controller";
 
 const router = Router();
 

@@ -5,6 +5,7 @@ import * as dotenv from "dotenv";
 import express, { NextFunction, Request, Response } from "express";
 import morgan from "morgan";
 
+import connectDB from "./config/db";
 import IRCTCRouter from "./routes/irctc.routes";
 import { ApiResponse } from "./utils/api-response";
 import { colorizeStatus } from "./utils/morgan-tokens";
@@ -60,8 +61,10 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) => {
 });
 
 if (process.env.NODE_ENV === "dev") {
-  app.listen(PORT, () => {
-    console.log(`HTTP Server started at PORT: ${PORT}`);
+  connectDB().then(() => {
+    app.listen(PORT, () => {
+      console.log(`HTTP Server started at PORT: ${PORT}`);
+    });
   });
 }
 
