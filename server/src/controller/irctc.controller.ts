@@ -42,10 +42,15 @@ export const searchTrains = asyncHandler(async (req, res) => {
       headers: rapidApiHeaders,
     });
 
-    await new SearchTrain({ key, data: response.data }).save();
+    await SearchTrain.findOneAndUpdate(
+      { key },
+      { data: response.data, timestamp: Date.now() },
+      { upsert: true, new: true },
+    );
 
     return res.status(200).json(response.data);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });
@@ -77,10 +82,15 @@ export const getLiveTrainStatus = asyncHandler(async (req, res) => {
       headers: rapidApiHeaders,
     });
 
-    await new LiveTrainStatus({ key, data: response.data }).save();
+    await LiveTrainStatus.findOneAndUpdate(
+      { key },
+      { data: response.data, timestamp: Date.now() },
+      { upsert: true, new: true },
+    );
 
     return res.status(200).json(response.data);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });
@@ -110,10 +120,15 @@ export const getPNRStatus = asyncHandler(async (req, res) => {
       headers: rapidApiHeaders,
     });
 
-    await new PNRStatus({ key, data: response.data }).save();
+    await PNRStatus.findOneAndUpdate(
+      { key },
+      { data: response.data, timestamp: Date.now() },
+      { upsert: true, new: true },
+    );
 
     return res.status(200).json(response.data);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });
@@ -143,10 +158,15 @@ export const getTrainSchedule = asyncHandler(async (req, res) => {
       headers: rapidApiHeaders,
     });
 
-    await new TrainSchedule({ key, data: response.data }).save();
+    await TrainSchedule.findOneAndUpdate(
+      { key },
+      { data: response.data, timestamp: Date.now() },
+      { upsert: true, new: true },
+    );
 
     return res.status(200).json(response.data);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: "Internal Server Error" });
   }
 });
